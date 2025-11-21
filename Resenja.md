@@ -998,6 +998,20 @@ class Program
     }
 }
 ```
+## Objašnjenje rešenja (kratko)
+
+Interfejs nije generički, ali sadrži jednu generičku metodu.
+
+Klasa CInfo implementira metodu i vraća podatke o vrednostima i nazivima tipova.
+
+U Main() se dva puta poziva metoda:
+
+sa tipovima int i double
+
+sa tipovima char i float
+
+Rešenje je najjednostavnija i najčistija moguća verzija.
+
 
 ## 24. Poređenje osoba preko delegata
 ```csharp
@@ -1005,170 +1019,286 @@ using System;
 
 class Osoba
 {
-    public string Ime, Prezime;
-    public Osoba(string ime, string prezime) { Ime = ime; Prezime = prezime; }
-}
+    public string ime;
+    public string prezime;
 
-delegate int Poredi(Osoba a, Osoba b);
+    public Osoba(string i, string p)
+    {
+        ime = i;
+        prezime = p;
+    }
+}
 
 class Program
 {
-    static int PoImenu(Osoba a, Osoba b) => string.Compare(a.Ime, b.Ime, true);
-    static int PoPrezimenu(Osoba a, Osoba b) => string.Compare(a.Prezime, b.Prezime, true);
+    // delegat: rezultat int, argumenti Osoba
+    delegate int Poredjenje(Osoba a, Osoba b);
+
+    // poređenje po imenu
+    static int PorediIme(Osoba a, Osoba b)
+    {
+        return a.ime.CompareTo(b.ime);
+    }
+
+    // poređenje po prezimenu
+    static int PorediPrezime(Osoba a, Osoba b)
+    {
+        return a.prezime.CompareTo(b.prezime);
+    }
 
     static void Main()
     {
-        var o1 = new Osoba("Ana", "Anic");
-        var o2 = new Osoba("Petar", "Petrovic");
+        Osoba o1 = new Osoba("Marko", "Marković");
+        Osoba o2 = new Osoba("Nikola", "Nikolić");
 
-        Poredi d = PoImenu;
-        Console.WriteLine(d(o1, o2) < 0 ? "Prvo ime je pre" : "Drugo ime je pre");
-        d = PoPrezimenu;
-        Console.WriteLine(d(o1, o2) < 0 ? "Prezime 1 pre" : "Prezime 2 pre");
+        Poredjenje d;
+
+        // prvo poređenje po imenu
+        d = PorediIme;
+        if (d(o1, o2) == 0)
+            Console.WriteLine("Ista imena");
+        else
+            Console.WriteLine("Različita imena");
+
+        // drugo poređenje po prezimenu
+        d = PorediPrezime;
+        if (d(o1, o2) == 0)
+            Console.WriteLine("Ista prezimena");
+        else
+            Console.WriteLine("Različita prezimena");
     }
 }
 ```
 
 ## 25. Delegat u Windows Forms (krug/sfera)
-```csharp
-// U Form1.cs
-public partial class Form1 : Form
-{
-    private delegate double Op(double r);
-    public Form1()
-    {
-        InitializeComponent();
-        Op obim = r => 2 * Math.PI * r;
-        Op povrsina = r => Math.PI * r * r;
-        Op zapremina = r => 4.0 / 3.0 * Math.PI * Math.Pow(r, 3);
 
-        double r = 2;
-        MessageBox.Show($"O: {obim(r)}, P: {povrsina(r)}, V: {zapremina(r)}");
+**Form1.cs — LOGIKA FORME**
+```csharp
+using System;
+using System.Windows.Forms;
+
+namespace Zadatak25
+{
+    public partial class Form1 : Form
+    {
+        // delegat: prima double, vraća double
+        delegate double Operacija(double r);
+
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        // OBIM = 2 * π * R
+        double Obim(double r)
+        {
+            return 2 * Math.PI * r;
+        }
+
+        // POVRŠINA = π * R^2
+        double Povrsina(double r)
+        {
+            return Math.PI * r * r;
+        }
+
+        // ZAPREMINA SFERE = 4/3 * π * R^3
+        double Zapremina(double r)
+        {
+            return 4.0 / 3.0 * Math.PI * r * r * r;
+        }
+
+        private void btnIzracunaj_Click(object sender, EventArgs e)
+        {
+            double r;
+
+            // najjednostavnija validacija
+            if (!double.TryParse(txtR.Text, out r))
+            {
+                MessageBox.Show("Unesite broj!");
+                return;
+            }
+
+            Operacija d;
+
+            // obim
+            d = Obim;
+            double obim = d(r);
+
+            // površina
+            d = Povrsina;
+            double povrsina = d(r);
+
+            // zapremina
+            d = Zapremina;
+            double zapremina = d(r);
+
+            // ispis
+            MessageBox.Show(
+                "Obim kruga: " + obim +
+                "\nPovršina kruga: " + povrsina +
+                "\nZapremina sfere: " + zapremina
+            );
+        }
     }
 }
 ```
+##DIZAJN FORME:
 
-## 26. Generička osnovna/izvedena klasa (KKA)
+**Label: „Unesite poluprečnik R:“**
+
+TextBox: txtR
+
+Button: btnIzracunaj sa tekstom „Izračunaj“
+
+
+## 26. Generička osnovna i generička izvedena klasa
 ```csharp
 using System;
 
-class Base<T>
+class Osnovna<T>
 {
-    public T A { get; set; }
-    public Base(T a) { A = a; }
+    private T podatak1;
+
+    public Osnovna(T x)
+    {
+        podatak1 = x;
+    }
+
+    public T Podatak1
+    {
+        get { return podatak1; }
+        set { podatak1 = value; }
+    }
 }
 
-class Derived<T> : Base<T>
+class Izvedena<T> : Osnovna<T>
 {
-    public T B { get; set; }
-    public Derived(T a, T b) : base(a) { B = b; }
+    private T podatak2;
+
+    public Izvedena(T x, T y) : base(x)
+    {
+        podatak2 = y;
+    }
+
+    public T Podatak2
+    {
+        get { return podatak2; }
+        set { podatak2 = value; }
+    }
 }
 
 class Program
 {
     static void Main()
     {
-        var x = new Derived<int>(1, 2);
-        Console.WriteLine($"A={x.A}, B={x.B}");
+        Izvedena<int> obj = new Izvedena<int>(10, 20);
+
+        Console.WriteLine("Prvi podatak: " + obj.Podatak1);
+        Console.WriteLine("Drugi podatak: " + obj.Podatak2);
     }
 }
 ```
 
-## 27. Niz1/Niz2 generičke klase
+## 27. Generičke klase Niz1<T> i Niz2<T, V>
 ```csharp
 using System;
 
 class Niz1<T>
 {
-    protected T[] niz;
-    public Niz1(T[] niz) { this.niz = niz; }
-    public T VratiVrednost(int i) => niz[i];
-    public void Ispis1() => Console.WriteLine(string.Join(" ", niz));
+    protected T[] niz1;
+
+    public Niz1(T[] niz)
+    {
+        niz1 = niz;
+    }
+
+    public T VratiVrednost(int indeks)
+    {
+        return niz1[indeks];
+    }
+
+    public void Ispis1()
+    {
+        Console.Write("Niz1: ");
+        for (int i = 0; i < niz1.Length; i++)
+            Console.Write(niz1[i] + " ");
+        Console.WriteLine();
+    }
 }
 
 class Niz2<T, V> : Niz1<T>
 {
-    private V[] kljucevi;
-    public Niz2(T[] niz, V[] kljucevi) : base(niz) { this.kljucevi = kljucevi; }
-    public V VratiKljuc(int i) => kljucevi[i];
-    public void Ispis2() => Console.WriteLine(string.Join(" ", kljucevi));
+    private V[] niz2;
+
+    public Niz2(T[] nizA, V[] nizB) : base(nizA)
+    {
+        niz2 = nizB;
+    }
+
+    public V VratKljuc(int indeks)
+    {
+        return niz2[indeks];
+    }
+
+    public void Ispis2()
+    {
+        Console.Write("Niz2: ");
+        for (int i = 0; i < niz2.Length; i++)
+            Console.Write(niz2[i] + " ");
+        Console.WriteLine();
+    }
 }
 
 class Program
 {
     static void Main()
     {
-        char[] niz1 = { 'a', 'b', 'c' };
-        double[] niz2 = { 1.1, 2.2, 3.3 };
-        var obj = new Niz2<char, double>(niz1, niz2);
+        // dva niza iste dužine
+        char[] nizChar = { 'A', 'B', 'C', 'D' };
+        double[] nizDouble = { 1.1, 2.2, 3.3, 4.4 };
+
+        // objekat izvedene klase
+        Niz2<char, double> obj = new Niz2<char, double>(nizChar, nizDouble);
+
+        // ispis oba niza
         obj.Ispis1();
         obj.Ispis2();
-        int idx = int.Parse(Console.ReadLine());
-        Console.WriteLine($"Vrednost: {obj.VratiVrednost(idx)}");
-        Console.WriteLine($"Kljuc: {obj.VratiKljuc(idx)}");
+
+        // unos indeksa
+        Console.Write("Unesite indeks: ");
+        int k = int.Parse(Console.ReadLine());
+
+        // ispis vrednosti i ključa
+        Console.WriteLine("Vrednost (niz1): " + obj.VratiVrednost(k));
+        Console.WriteLine("Kljuc (niz2): " + obj.VratKljuc(k));
     }
 }
 ```
-
-## 28–33. Prosleđivanje podataka između formi
-- **Svojstva (roditelj → child)**: u child formi napraviti javno svojstvo, postaviti ga pre `ShowDialog`.
-- **Konstruktor (roditelj → child)**: proslediti vrednost kroz konstruktor child forme.
-- **Prosleđivanje objekta forme**: proslediti referencu na roditeljsku formu i pozvati njene metode/svojstva.
-- **Delegat (roditelj → child)**: proslediti delegat koji child poziva kada treba podatak.
-- **Svojstva (child → roditelj)**: roditelj čita javno svojstvo child forme posle zatvaranja.
-- **Bez svojstava (child → roditelj)**: koristiti događaj ili povratnu vrednost iz `DialogResult` sa javnim poljima.
-
-## 34/38/42. Forma za studente
-- **Klasa Student**
+## 28. Prosleđivanje podatka proizvoljnog tipa sa roditeljske na child formu pomoću svojstava.
 ```csharp
-public class Student
-{
-    public string Ime { get; set; }
-    public string Prezime { get; set; }
-    public string BrojIndeksa { get; set; }
-    public DateTime DatumRodjenja { get; set; }
-    public string Smer { get; set; }
-    public override string ToString() => $"{Ime} {Prezime} ({BrojIndeksa}), {Smer}, {DatumRodjenja:dd.MM.yyyy}";
-}
+
 ```
-- **FormStudenti**: `ListBox lst; Button btnDodaj, btnObrisi, btnObrisiSve;` Dugmad manipulišu listom studenata; `btnDodaj` otvara `FormUnosNovogStudenta` modalno i dodaje rezultat u listu.
-- **FormUnosNovogStudenta**: sadrži `TextBox`e za ime, prezime, broj indeksa, `ComboBox` sa smerovima i `DateTimePicker` za datum; na `Snimi` formira `Student` objekat dostupan roditelju (kroz svojstvo).
 
-## 35/40/44. MDI aplikacija sa menijem za otvaranje dokumenata
-- Glavna forma je `IsMdiContainer = true`; meni sadrži stavke **Fajl** (Otvori Excel, sliku, Word, Exit) i **O programu** (čita txt i prikazuje u `MessageBox`).
-- Stavke imaju `ShortcutKeys` kako je zadato; otvaranje fajlova koristi `OpenFileDialog` i prikazuje sadržaj u novom `Child` prozoru sa `RichTextBox` ili `PictureBox`.
-
-## 36/39/43. MDI aplikacija – izbor ispisa i raspored prozora
-- Stavka **Izbor ispisa** kreira child formu i popunjava `RichTextBox` vrednostima `Math.Sqrt(i)`, `i*i` ili `i*i*i` za `i=1..N` prema izabranoj podstavci.
-- Stavka **Window** koristi `LayoutMdi(MdiLayout.Cascade/TileHorizontal/TileVertical)`.
-- Stavka **O programu** prikazuje tekst iz datoteke u `MessageBox`.
-
-## 37/41. Klasičan WordPad (KWA) primer
-- Meni **File** (New/Open/Save/Save As/Close/Exit), **Edit** (Cut/Copy/Paste) i **Help**. Koristi `RichTextBox`, `OpenFileDialog`, `SaveFileDialog` i kontekstni meni sa istim komandama.
-- Svaka stavka poziva odgovarajuću metodu `richTextBox1.Cut()`, `Copy()`, `Paste()`, `LoadFile()`, `SaveFile()` itd.
-
-## 28–33 primer koda (delegat child→roditelj)
+## 29. Prosleđivanje podatka proizvoljnog tipa sa roditeljske na child formu pomoću konstruktora.
 ```csharp
-// U roditeljskoj formi
-public partial class FormParent : Form
-{
-    public FormParent()
-    {
-        InitializeComponent();
-    }
 
-    private void btnOpen_Click(object sender, EventArgs e)
-    {
-        var child = new FormChild();
-        child.Prosledi = txt => MessageBox.Show($"Stiglo: {txt}");
-        child.ShowDialog();
-    }
-}
+```
 
-// U child formi
-public partial class FormChild : Form
-{
-    public Action<string> Prosledi { get; set; }
-    private void btnSend_Click(object sender, EventArgs e) => Prosledi?.Invoke(textBox1.Text);
-}
+## 30. Prosleđivanje podatka proizvoljnog tipa sa roditeljske na child formu pomoću objekta forme.
+```csharp
+
+```
+
+## 31. Prosleđivanje podatka proizvoljnog tipa sa roditeljske na child formu pomoću delegata.
+```csharp
+
+```
+
+## 32. Prosleđivanje podatka proizvoljnog tipa sa **child** na roditeljsku formu pomoću svojstava.
+```csharp
+
+```
+## 33. Prosleđivanje podatka proizvoljnog tipa sa child na roditeljsku formu bez upotrebe svojstava.
+```csharp
+
 ```
