@@ -1,0 +1,17 @@
+C:\Users\zemun\Desktop\Zadaci Programiranje\ZADATAK_28\ZADATAK_28\bin\Debug\net10.0-windows\ZADATAK_28.exe
+C:\Users\zemun\Desktop\Zadaci Programiranje\ZADATAK_28\ZADATAK_28\bin\Debug\net10.0-windows\ZADATAK_28.deps.json
+C:\Users\zemun\Desktop\Zadaci Programiranje\ZADATAK_28\ZADATAK_28\bin\Debug\net10.0-windows\ZADATAK_28.runtimeconfig.json
+C:\Users\zemun\Desktop\Zadaci Programiranje\ZADATAK_28\ZADATAK_28\bin\Debug\net10.0-windows\ZADATAK_28.dll
+C:\Users\zemun\Desktop\Zadaci Programiranje\ZADATAK_28\ZADATAK_28\bin\Debug\net10.0-windows\ZADATAK_28.pdb
+C:\Users\zemun\Desktop\Zadaci Programiranje\ZADATAK_28\ZADATAK_28\obj\Debug\net10.0-windows\ZADATAK_28.Form1.resources
+C:\Users\zemun\Desktop\Zadaci Programiranje\ZADATAK_28\ZADATAK_28\obj\Debug\net10.0-windows\ZADATAK_28.Form2.resources
+C:\Users\zemun\Desktop\Zadaci Programiranje\ZADATAK_28\ZADATAK_28\obj\Debug\net10.0-windows\ZADATAK_28.csproj.GenerateResource.cache
+C:\Users\zemun\Desktop\Zadaci Programiranje\ZADATAK_28\ZADATAK_28\obj\Debug\net10.0-windows\ZADATAK_28.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\zemun\Desktop\Zadaci Programiranje\ZADATAK_28\ZADATAK_28\obj\Debug\net10.0-windows\ZADATAK_28.AssemblyInfoInputs.cache
+C:\Users\zemun\Desktop\Zadaci Programiranje\ZADATAK_28\ZADATAK_28\obj\Debug\net10.0-windows\ZADATAK_28.AssemblyInfo.cs
+C:\Users\zemun\Desktop\Zadaci Programiranje\ZADATAK_28\ZADATAK_28\obj\Debug\net10.0-windows\ZADATAK_28.csproj.CoreCompileInputs.cache
+C:\Users\zemun\Desktop\Zadaci Programiranje\ZADATAK_28\ZADATAK_28\obj\Debug\net10.0-windows\ZADATAK_28.dll
+C:\Users\zemun\Desktop\Zadaci Programiranje\ZADATAK_28\ZADATAK_28\obj\Debug\net10.0-windows\refint\ZADATAK_28.dll
+C:\Users\zemun\Desktop\Zadaci Programiranje\ZADATAK_28\ZADATAK_28\obj\Debug\net10.0-windows\ZADATAK_28.pdb
+C:\Users\zemun\Desktop\Zadaci Programiranje\ZADATAK_28\ZADATAK_28\obj\Debug\net10.0-windows\ZADATAK_28.genruntimeconfig.cache
+C:\Users\zemun\Desktop\Zadaci Programiranje\ZADATAK_28\ZADATAK_28\obj\Debug\net10.0-windows\ref\ZADATAK_28.dll
