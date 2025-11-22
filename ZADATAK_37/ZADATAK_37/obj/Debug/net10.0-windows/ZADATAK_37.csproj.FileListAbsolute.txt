@@ -1,0 +1,16 @@
+C:\Users\zemun\Desktop\Zadaci Programiranje\ZADATAK_37\ZADATAK_37\bin\Debug\net10.0-windows\ZADATAK_37.exe
+C:\Users\zemun\Desktop\Zadaci Programiranje\ZADATAK_37\ZADATAK_37\bin\Debug\net10.0-windows\ZADATAK_37.deps.json
+C:\Users\zemun\Desktop\Zadaci Programiranje\ZADATAK_37\ZADATAK_37\bin\Debug\net10.0-windows\ZADATAK_37.runtimeconfig.json
+C:\Users\zemun\Desktop\Zadaci Programiranje\ZADATAK_37\ZADATAK_37\bin\Debug\net10.0-windows\ZADATAK_37.dll
+C:\Users\zemun\Desktop\Zadaci Programiranje\ZADATAK_37\ZADATAK_37\bin\Debug\net10.0-windows\ZADATAK_37.pdb
+C:\Users\zemun\Desktop\Zadaci Programiranje\ZADATAK_37\ZADATAK_37\obj\Debug\net10.0-windows\ZADATAK_37.Form1.resources
+C:\Users\zemun\Desktop\Zadaci Programiranje\ZADATAK_37\ZADATAK_37\obj\Debug\net10.0-windows\ZADATAK_37.csproj.GenerateResource.cache
+C:\Users\zemun\Desktop\Zadaci Programiranje\ZADATAK_37\ZADATAK_37\obj\Debug\net10.0-windows\ZADATAK_37.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\zemun\Desktop\Zadaci Programiranje\ZADATAK_37\ZADATAK_37\obj\Debug\net10.0-windows\ZADATAK_37.AssemblyInfoInputs.cache
+C:\Users\zemun\Desktop\Zadaci Programiranje\ZADATAK_37\ZADATAK_37\obj\Debug\net10.0-windows\ZADATAK_37.AssemblyInfo.cs
+C:\Users\zemun\Desktop\Zadaci Programiranje\ZADATAK_37\ZADATAK_37\obj\Debug\net10.0-windows\ZADATAK_37.csproj.CoreCompileInputs.cache
+C:\Users\zemun\Desktop\Zadaci Programiranje\ZADATAK_37\ZADATAK_37\obj\Debug\net10.0-windows\ZADATAK_37.dll
+C:\Users\zemun\Desktop\Zadaci Programiranje\ZADATAK_37\ZADATAK_37\obj\Debug\net10.0-windows\refint\ZADATAK_37.dll
+C:\Users\zemun\Desktop\Zadaci Programiranje\ZADATAK_37\ZADATAK_37\obj\Debug\net10.0-windows\ZADATAK_37.pdb
+C:\Users\zemun\Desktop\Zadaci Programiranje\ZADATAK_37\ZADATAK_37\obj\Debug\net10.0-windows\ZADATAK_37.genruntimeconfig.cache
+C:\Users\zemun\Desktop\Zadaci Programiranje\ZADATAK_37\ZADATAK_37\obj\Debug\net10.0-windows\ref\ZADATAK_37.dll
