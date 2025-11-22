@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "zadatak_29/1.0.0": {
+        "runtime": {
+          "zadatak_29.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "zadatak_29/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
