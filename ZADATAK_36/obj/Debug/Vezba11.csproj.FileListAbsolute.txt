@@ -1,0 +1,25 @@
+C:\Users\Ucenik14\Desktop\Vezba11\bin\Debug\Vezba11.exe.config
+C:\Users\Ucenik14\Desktop\Vezba11\bin\Debug\Vezba11.exe
+C:\Users\Ucenik14\Desktop\Vezba11\bin\Debug\Vezba11.pdb
+C:\Users\Ucenik14\Desktop\Vezba11\obj\Debug\Vezba11.csprojAssemblyReference.cache
+C:\Users\Ucenik14\Desktop\Vezba11\obj\Debug\Vezba11.Form1.resources
+C:\Users\Ucenik14\Desktop\Vezba11\obj\Debug\Vezba11.Properties.Resources.resources
+C:\Users\Ucenik14\Desktop\Vezba11\obj\Debug\Vezba11.csproj.GenerateResource.cache
+C:\Users\Ucenik14\Desktop\Vezba11\obj\Debug\Vezba11.exe
+C:\Users\Ucenik14\Desktop\Vezba11\obj\Debug\Vezba11.pdb
+C:\Users\Ucenik14\Desktop\Vezba11\obj\Debug\Vezba11.Form2.resources
+C:\Users\Ucenik14\Desktop\Vezba11\obj\Debug\Vezba11.Form3.resources
+C:\Users\Ucenik14\Desktop\Vezba11\obj\Debug\Vezba11.Form4.resources
+C:\Users\zemun\Desktop\Zadaci Programiranje\ZADATAK_36\bin\Debug\Vezba11.exe.config
+C:\Users\zemun\Desktop\Zadaci Programiranje\ZADATAK_36\bin\Debug\Vezba11.exe
+C:\Users\zemun\Desktop\Zadaci Programiranje\ZADATAK_36\bin\Debug\Vezba11.pdb
+C:\Users\zemun\Desktop\Zadaci Programiranje\ZADATAK_36\obj\Debug\Vezba11.csproj.AssemblyReference.cache
+C:\Users\zemun\Desktop\Zadaci Programiranje\ZADATAK_36\obj\Debug\Vezba11.Form1.resources
+C:\Users\zemun\Desktop\Zadaci Programiranje\ZADATAK_36\obj\Debug\Vezba11.Form2.resources
+C:\Users\zemun\Desktop\Zadaci Programiranje\ZADATAK_36\obj\Debug\Vezba11.Form3.resources
+C:\Users\zemun\Desktop\Zadaci Programiranje\ZADATAK_36\obj\Debug\Vezba11.Form4.resources
+C:\Users\zemun\Desktop\Zadaci Programiranje\ZADATAK_36\obj\Debug\Vezba11.Properties.Resources.resources
+C:\Users\zemun\Desktop\Zadaci Programiranje\ZADATAK_36\obj\Debug\Vezba11.csproj.GenerateResource.cache
+C:\Users\zemun\Desktop\Zadaci Programiranje\ZADATAK_36\obj\Debug\Vezba11.csproj.CoreCompileInputs.cache
+C:\Users\zemun\Desktop\Zadaci Programiranje\ZADATAK_36\obj\Debug\Vezba11.exe
+C:\Users\zemun\Desktop\Zadaci Programiranje\ZADATAK_36\obj\Debug\Vezba11.pdb
